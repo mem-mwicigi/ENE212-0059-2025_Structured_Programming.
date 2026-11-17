@@ -4,27 +4,27 @@
 int main()
 {
     int n;
-    int a;
-    int b;
+    int count;
     //ask the user to enter the number of elements
-    printf("\nInput the size of array: ");
+    printf("\nInput the number of elements to be stored in the array: ");
     scanf("%d", &n);
     int arr[n];
-    printf("\nInput the %d elements in the array: ", n);
+    printf("\nInput %d elements in the array", n);
     for(int i = 0; i < n; i++){
         printf("\nelement - %d: ", i);
         scanf("%d", &arr[i]);
-        for (a = i + 1; a < n; a++){
-            if (arr[i] > arr[a]){
-                b = arr[i];
-                arr[i] = arr[a];
-                arr[a] = b;
+    }
+    printf("\nThe unique number of elements found in the array are: ");
+    for(int i = 0; i < n; i++){
+        count = 0;
+        for(int j = 0; j < n; j++){
+            if (arr[i] == arr[j]){
+                count++;
             }
         }
-    }
-    printf("\nElements of array in sorted ascending order: ");
-    for(int i = 0; i < n; i++){
+       if (count == 1){
         printf("%d ", arr[i]);
+       }
     }
     return 0;
 }
